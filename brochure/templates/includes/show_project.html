@@ -1,0 +1,12 @@
+
+<body>
+{#    Displays a project details#}
+    {% for project in projects %}
+        <h2><a href={{ project.website }}>{{ project.name }}</a></h2>
+        <p>{{ project.level}}</p>
+        <p>{{ project.date_created }}</p>
+        {% for image in project.images %}
+            <img width="100px" src="{{ image.image.url }}"
+        {% endfor %}
+    {% endfor %}
+</body>
