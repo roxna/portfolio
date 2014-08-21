@@ -19,11 +19,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd$&6pg32n2p7w5r)@u&j(u4^(&w=dp*meyxi$zpcsm&wh!8r4w'
 
+
+## LOCAL SETTINGS
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
+# DEBUG = True
+#
+# TEMPLATE_DEBUG = True
+#
 # ALLOWED_HOSTS = []
 
 
@@ -94,11 +97,13 @@ except ImportError:
     pass
 
 
-## PRODUCTION SETTINGS
+# PRODUCTION SETTINGS
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
+
+TEMPLATE_DEBUG = False
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
